@@ -1,0 +1,318 @@
+# =============================================================================
+# Portfolio Website .htaccess Configuration
+# =============================================================================
+
+# Enable URL Rewriting
+RewriteEngine On
+
+# =============================================================================
+# Security Headers
+# =============================================================================
+
+# X-Frame-Options
+Header always set X-Frame-Options "SAMEORIGIN"
+
+# X-Content-Type-Options
+Header always set X-Content-Type-Options "nosniff"
+
+# X-XSS-Protection
+Header always set X-XSS-Protection "1; mode=block"
+
+# Referrer Policy
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+# Content Security Policy
+Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com https://cdnjs.cloudflare.com https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self';"
+
+# =============================================================================
+# HTTPS Redirect
+# =============================================================================
+
+# Redirect HTTP to HTTPS (uncomment in production)
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# =============================================================================
+# WWW Redirect (choose one)
+# =============================================================================
+
+# Redirect www to non-www
+# RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+# RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+# OR redirect non-www to www
+# RewriteCond %{HTTP_HOST} !^www\. [NC]
+# RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [R=301,L]
+
+# =============================================================================
+# Pretty URLs
+# =============================================================================
+
+# Remove .html extension from URLs
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+# Remove .php extension from URLs
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+# Redirect .html and .php extensions to clean URLs
+RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
+RewriteRule ^ /%1 [NC,L,R=301]
+
+RewriteCond %{THE_REQUEST} /([^.]+)\.php [NC]
+RewriteRule ^ /%1 [NC,L,R=301]
+
+# =============================================================================
+# API Routes
+# =============================================================================
+
+# Route API requests to backend
+RewriteRule ^api/contact/?$ backend/contact.php [L,QSA]
+RewriteRule ^api/projects/?$ backend/projects.php [L,QSA]
+RewriteRule ^api/testimonials/?$ backend/testimonials.php [L,QSA]
+
+# =============================================================================
+# Error Pages
+# =============================================================================
+
+# Custom error pages
+ErrorDocument 400 /errors/400.html
+ErrorDocument 401 /errors/401.html
+ErrorDocument 403 /errors/403.html
+ErrorDocument 404 /errors/404.html
+ErrorDocument 500 /errors/500.html
+ErrorDocument 502 /errors/502.html
+ErrorDocument 503 /errors/503.html
+
+# =============================================================================
+# File Protection
+# =============================================================================
+
+# Protect sensitive files
+<FilesMatch "\.(htaccess|htpasswd|ini|log|sh|sql|conf)$">
+    Require all denied
+</FilesMatch>
+
+# Protect PHP configuration files
+<FilesMatch "config\.php$">
+    Require all denied
+</FilesMatch>
+
+# Protect database files
+<FilesMatch "\.(db|sqlite|sqlite3)$">
+    Require all denied
+</FilesMatch>
+
+# Protect backup files
+<FilesMatch "\.(bak|backup|old|orig|save|swp|tmp)$">
+    Require all denied
+</FilesMatch>
+
+# =============================================================================
+# MIME Types
+# =============================================================================
+
+# Proper MIME types for web fonts
+AddType application/vnd.ms-fontobject .eot
+AddType font/truetype .ttf
+AddType font/opentype .otf
+AddType font/woff .woff
+AddType font/woff2 .woff2
+AddType image/svg+xml .svg
+
+# JavaScript and CSS MIME types
+AddType application/javascript .js
+AddType text/css .css
+
+# =============================================================================
+# Compression
+# =============================================================================
+
+# Enable Gzip compression
+<IfModule mod_deflate.c>
+    # Compress HTML, CSS, JavaScript, Text, XML and fonts
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
+    AddOutputFilterByType DEFLATE application/x-font
+    AddOutputFilterByType DEFLATE application/x-font-opentype
+    AddOutputFilterByType DEFLATE application/x-font-otf
+    AddOutputFilterByType DEFLATE application/x-font-truetype
+    AddOutputFilterByType DEFLATE application/x-font-ttf
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE font/opentype
+    AddOutputFilterByType DEFLATE font/otf
+    AddOutputFilterByType DEFLATE font/ttf
+    AddOutputFilterByType DEFLATE image/svg+xml
+    AddOutputFilterByType DEFLATE image/x-icon
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/xml
+
+    # Remove browser bugs (only needed for really old browsers)
+    BrowserMatch ^Mozilla/4 gzip-only-text/html
+    BrowserMatch ^Mozilla/4\.0[678] no-gzip
+    BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+    Header append Vary User-Agent
+</IfModule>
+
+# =============================================================================
+# Browser Caching
+# =============================================================================
+
+<IfModule mod_expires.c>
+    ExpiresActive on
+
+    # Images
+    ExpiresByType image/jpg "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/gif "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/webp "access plus 1 month"
+    ExpiresByType image/svg+xml "access plus 1 month"
+    ExpiresByType image/x-icon "access plus 1 year"
+
+    # Video
+    ExpiresByType video/mp4 "access plus 1 month"
+    ExpiresByType video/webm "access plus 1 month"
+
+    # CSS and JavaScript
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
+
+    # Web Fonts
+    ExpiresByType font/truetype "access plus 1 year"
+    ExpiresByType font/opentype "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType application/vnd.ms-fontobject "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+
+    # Documents
+    ExpiresByType application/pdf "access plus 1 month"
+
+    # HTML
+    ExpiresByType text/html "access plus 0 seconds"
+
+    # Default
+    ExpiresDefault "access plus 2 days"
+</IfModule>
+
+# Alternative caching headers
+<IfModule mod_headers.c>
+    # Cache static assets for 1 month
+    <FilesMatch "\.(ico|jpg|jpeg|png|gif|svg|webp|css|js|woff|woff2|ttf|eot)$">
+        Header set Cache-Control "max-age=2592000, public"
+    </FilesMatch>
+
+    # Cache HTML for 1 hour
+    <FilesMatch "\.(html|htm)$">
+        Header set Cache-Control "max-age=3600, public, must-revalidate"
+    </FilesMatch>
+
+    # Don't cache dynamic content
+    <FilesMatch "\.(php|pl|py|jsp|asp|sh|cgi)$">
+        Header set Cache-Control "no-cache, no-store, must-revalidate"
+        Header set Pragma "no-cache"
+        Header set Expires 0
+    </FilesMatch>
+</IfModule>
+
+# =============================================================================
+# Performance Optimizations
+# =============================================================================
+
+# Remove ETags
+<IfModule mod_headers.c>
+    Header unset ETag
+</IfModule>
+FileETag None
+
+# Force UTF-8 encoding
+AddDefaultCharset utf-8
+AddCharset utf-8 .atom .css .js .json .rss .vtt .xml
+
+# =============================================================================
+# CORS Headers (for API endpoints)
+# =============================================================================
+
+<IfModule mod_headers.c>
+    # Allow cross-origin requests for API endpoints
+    <LocationMatch "^/backend/">
+        Header always set Access-Control-Allow-Origin "*"
+        Header always set Access-Control-Allow-Methods "GET, POST, OPTIONS, DELETE, PUT"
+        Header always set Access-Control-Allow-Headers "Content-Type, Authorization, X-Requested-With"
+        Header always set Access-Control-Max-Age "3600"
+    </LocationMatch>
+
+    # Handle preflight requests
+    RewriteCond %{REQUEST_METHOD} OPTIONS
+    RewriteRule ^(.*)$ $1 [R=200,L]
+</IfModule>
+
+# =============================================================================
+# Directory Security
+# =============================================================================
+
+# Disable directory browsing
+Options -Indexes
+
+# Prevent access to sensitive directories
+<DirectoryMatch "(^|/)\.">
+    Require all denied
+</DirectoryMatch>
+
+# Protect uploads directory from script execution
+<Directory "assets/uploads">
+    <FilesMatch "\.(php|phtml|php3|php4|php5|pl|py|jsp|asp|sh|cgi)$">
+        Require all denied
+    </FilesMatch>
+</Directory>
+
+# =============================================================================
+# Rate Limiting (if mod_evasive is available)
+# =============================================================================
+
+<IfModule mod_evasive24.c>
+    DOSHashTableSize    256
+    DOSPageCount        3
+    DOSPageInterval     1
+    DOSSiteCount        50
+    DOSSiteInterval     1
+    DOSBlockingPeriod   60
+</IfModule>
+
+# =============================================================================
+# Maintenance Mode (uncomment to enable)
+# =============================================================================
+
+# RewriteCond %{REQUEST_URI} !/maintenance.html$
+# RewriteCond %{REQUEST_URI} !/assets/
+# RewriteCond %{REMOTE_ADDR} !^123\.456\.789\.000
+# RewriteRule $ /maintenance.html [R=302,L]
+
+# =============================================================================
+# Redirect old URLs (add as needed)
+# =============================================================================
+
+# Example redirects
+# Redirect 301 /old-page.html /new-page
+# Redirect 301 /portfolio.html /projects
+# Redirect 301 /contact.html /contact
+
+# =============================================================================
+# Environment Variables (if needed)
+# =============================================================================
+
+# Set environment variables for PHP
+# SetEnv DB_HOST localhost
+# SetEnv DB_NAME portfolio_db
+# SetEnv ENVIRONMENT production

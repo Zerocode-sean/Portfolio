@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>John Mutua - Portfolio</title>
+    <meta
+      name="description"
+      content="Professional portfolio showcasing web development skills and projects"
+    />
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+      <div class="container">
+        <div class="nav-brand">
+          <a href="#home">
+            <span class="brand-text">Portfolio</span>
+          </a>
+        </div>
+
+        <div class="nav-menu" id="nav-menu">
+          <ul class="nav-list">
+            <li><a href="#home" class="nav-link active">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#experience" class="nav-link">Experience</a></li>
+            <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="nav-controls">
+          <button class="theme-toggle" id="theme-toggle">
+            <i class="fas fa-moon"></i>
+          </button>
+          <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-background">
+        <div class="hero-particles"></div>
+      </div>
+      <div class="container">
+        <div class="hero-content" data-aos="fade-up">
+          <div class="hero-text">
+            <h1 class="hero-title">
+              Hi, I'm <span class="highlight">John</span>
+              <span class="highlight">Mutua</span>
+            </h1>
+            <h2 class="hero-subtitle">
+              <span class="typed-text"></span>
+              <span class="cursor">&nbsp;</span>
+            </h2>
+            <p class="hero-description">
+              Motivated IT graduate with strong academic training in networking,
+              software development, and cybersecurity, seeking an attachment to
+              gain hands-on industry experience. Skilled in web development,
+              database systems, and VPN configuration, with a growing interest
+              in DevOps, cloud technologies, and frontend frameworks.
+            </p>
+            <div class="hero-buttons">
+              <a href="#projects" class="btn btn-primary">View My Work</a>
+              <a href="#contact" class="btn btn-outline">Get In Touch</a>
+            </div>
+          </div>
+          <div class="hero-image" data-aos="fade-left" data-aos-delay="200">
+            <div class="image-container">
+              <img src="assets/images/profile.jpg" alt="Profile Picture" />
+              <div class="image-overlay"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="scroll-indicator">
+          <a href="#about">
+            <div class="scroll-arrow">
+              <i class="fas fa-chevron-down"></i>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section
+      id="about"
+      class="about"
+      itemscope
+      itemtype="https://schema.org/Person"
+    >
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title">About Me</h2>
+          <p class="section-subtitle">
+            <br /><br />
+            Learn more about who I am and what I do
+          </p>
+        </div>
+
+        <div class="about-content">
+          <div
+            class="about-text"
+            data-aos="fade-right"
+            itemscope
+            itemtype="https://schema.org/ProfessionalService"
+          >
+            <h3>Hello! I'm a passionate Tech enthusiast</h3>
+            <p itemprop="description">
+              With over <span itemprop="experienceInYearsOf">2</span> years of
+              experience in web development, I specialize in creating modern,
+              responsive websites and web applications, Kali Linux basic
+              penetration testing, VPN and network configuration, and system
+              hardening. I have a strong foundation in both front-end and
+              back-end technologies, with expertise in HTML5, CSS3,
+              JavaScript,PHP, node-js,Postgres and various frameworks. Hands on
+              practical experience in setting up and managing VPNs, ensuring
+              secure connections and data privacy.Familiar with tools like
+              Wireshark and Nmap for network analysis and security assessments.
+              Additionally, I have have growing ambition in DevOps and cloud
+              technologies, with a keen interest in automating deployments and
+              managing cloud infrastructure, Docker,kubernetes and AWS.
+            </p>
+            <p>
+              I enjoy turning complex problems into simple, beautiful, and
+              intuitive solutions. When I'm not coding, you'll find me exploring
+              new technologies, contributing to open-source projects, or reading
+              tech blogs books and articles with the latest read being
+              <i>"Software engineering at Google".</i>
+            </p>
+
+            <div
+              class="about-stats"
+              role="region"
+              aria-label="Professional Statistics"
+            >
+              <div class="stat">
+                <h4
+                  class="stat-number"
+                  data-count="10"
+                  aria-label="10 projects completed"
+                >
+                  0
+                </h4>
+                <p class="stat-label">Projects Completed</p>
+              </div>
+              <div class="stat">
+                <h4
+                  class="stat-number"
+                  data-count="2"
+                  aria-label="2 years of experience"
+                >
+                  0
+                </h4>
+                <p class="stat-label">Years of Experience</p>
+              </div>
+              <div class="stat">
+                <h4
+                  class="stat-number"
+                  data-count="25"
+                  aria-label="25 happy clients"
+                >
+                  0
+                </h4>
+                <p class="stat-label">Happy Clients</p>
+              </div>
+            </div>
+
+            <a
+              href="assets/Diploma in Infomation Tech (1).pdf"
+              class="btn btn-primary"
+              download
+              aria-label="Download John Mutua's resume in PDF format"
+              title="Download Resume (PDF)"
+            >
+              <i class="fas fa-download" aria-hidden="true"></i>
+              <span>Download Resume</span>
+            </a>
+          </div>
+
+          <div class="about-image" data-aos="fade-left">
+            <div class="image-container">
+              <img
+                src="assets/images/profile.jpg"
+                alt="John Mutua - Professional headshot"
+                loading="lazy"
+                onerror="this.src='assets/images/placeholder.jpg'; this.alt='Profile image not available'"
+                decoding="async"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title">Skills & Technologies</h2>
+          <br /><br />
+          <p class="section-subtitle">Technologies I work with</p>
+        </div>
+
+        <div class="skills-content">
+          <div class="skills-category" data-aos="fade-up" data-aos-delay="100">
+            <h3>Frontend</h3>
+            <div class="skill-items">
+              <div class="skill-item">
+                <i class="fab fa-html5"></i>
+                <span>HTML5</span>
+                <div class="skill-progress">
+                  <div class="progress-bar" data-width="95"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <i class="fab fa-css3-alt"></i>
+                <span>CSS3</span>
+                <div class="skill-progress">
+                  <div class="progress-bar" data-width="90"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <i class="fab fa-sass"></i>
+                <span>Sass/SCSS</span>
+                <div class="skill-progress">
+                  <div class="progress-bar" data-width="80"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <i class="fab fa-js-square"></i>
+                <span>JavaScript</span>
+                <div class="skill-progress">
+                  <div class="progress-bar" data-width="85"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <i class="fab fa-react"></i>
+                <span>React</span>
+                <div class="skill-progress">
+                  <div class="progress-bar" data-width="75"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <i class="fab fa-vuejs"></i>
+                <span>Vue.js</span>
+                <div class="skill-progress">
+                  <div class="progress-bar" data-width="60"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <i class="fab fa-angular"></i>
+                <span>Angular</span>
+                <div class="skill-progress">
+                  <div class="progress-bar" data-width="50"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-mobile-alt"></i>
+                <span>Responsive Design</span>
+                <div class="skill-progress">
+                  <div class="progress-bar" data-width="90"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skills-category" data-aos="fade-up" data-aos-delay="200">
+            <h3>Backend</h3>
+            <div class="skill-items">
+              <div class="skill-item">
+                <i class="fab fa-php"></i>
+                <span>PHP</span>
+                <div class="skill-progress">
+                  <div class="progress-bar" data-width="85"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <i class="fab fa-python"></i>
+                <span>Python</span>
+                <div class="skill-progress">
+                  <div class="progress-bar" data-width="75"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-database"></i>
+                <span>MySQL</span>
+                <div class="skill-progress">
+                  <div class="progress-bar" data-width="80"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-database"></i>
+                <span>PostgreSQL</span>
+                <div class="skill-progress">
+                  <div class="progress-bar" data-width="80"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <i class="fab fa-node-js"></i>
+                <span>Node.js</span>
+                <div class="skill-progress">
+                  <div class="progress-bar" data-width="75"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-server"></i>
+                <span>REST API</span>
+                <div class="skill-progress">
+                  <div class="progress-bar" data-width="85"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skills-category" data-aos="fade-up" data-aos-delay="300">
+            <h3>Tools & Other</h3>
+            <div class="skill-items">
+              <div class="skill-item">
+                <i class="fab fa-git-alt"></i>
+                <span>Git</span>
+                <div class="skill-progress">
+                  <div class="progress-bar" data-width="90"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <i class="fab fa-figma"></i>
+                <span>Figma</span>
+                <div class="skill-progress">
+                  <div class="progress-bar" data-width="75"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <i class="fab fa-docker"></i>
+                <span>Docker</span>
+                <div class="skill-progress">
+                  <div class="progress-bar" data-width="70"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <i class="fab fa-aws"></i>
+                <span>AWS</span>
+                <div class="skill-progress">
+                  <div class="progress-bar" data-width="65"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <i class="fab fa-linux"></i>
+                <span>Linux</span>
+                <div class="skill-progress">
+                  <div class="progress-bar" data-width="80"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-network-wired"></i>
+                <span>Networking</span>
+                <div class="skill-progress">
+                  <div class="progress-bar" data-width="70"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-shield-alt"></i>
+                <span>Cybersecurity</span>
+                <div class="skill-progress">
+                  <div class="progress-bar" data-width="75"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-server"></i>
+                <span>System Admin</span>
+                <div class="skill-progress">
+                  <div class="progress-bar" data-width="70"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-terminal"></i>
+                <span>Kali Linux</span>
+                <div class="skill-progress">
+                  <div class="progress-bar" data-width="75"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-search"></i>
+                <span>Penetration Testing</span>
+                <div class="skill-progress">
+                  <div class="progress-bar" data-width="65"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skills-category" data-aos="fade-up" data-aos-delay="400">
+            <h3>Databases & Cloud</h3>
+            <div class="skill-items">
+              <div class="skill-item">
+                <i class="fas fa-database"></i>
+                <span>MongoDB</span>
+                <div class="skill-progress">
+                  <div class="progress-bar" data-width="70"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <i class="fab fa-docker"></i>
+                <span>Docker</span>
+                <div class="skill-progress">
+                  <div class="progress-bar" data-width="70"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-cloud"></i>
+                <span>Kubernetes</span>
+                <div class="skill-progress">
+                  <div class="progress-bar" data-width="60"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-vpn"></i>
+                <span>VPN Config</span>
+                <div class="skill-progress">
+                  <div class="progress-bar" data-width="85"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title">Featured Projects</h2>
+          <br /><br />
+          <p class="section-subtitle">Some of my recent work</p>
+        </div>
+
+        <div class="project-filters" data-aos="fade-up" data-aos-delay="100">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="web">Web Apps</button>
+          <button class="filter-btn" data-filter="mobile">Mobile</button>
+          <!--<button class="filter-btn" data-filter="ui">UI/UX</button> -->
+        </div>
+
+        <div class="projects-grid" id="projects-grid">
+          <!-- Projects will be loaded dynamically -->
+        </div>
+
+        <div class="load-more-container" data-aos="fade-up">
+          <button class="btn btn-outline" id="load-more">
+            Load More Projects
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title">Experience & Education</h2>
+          <br /><br />
+          <p class="section-subtitle">My professional journey</p>
+        </div>
+
+        <div class="timeline">
+          <article
+            class="timeline-item"
+            data-aos="fade-up"
+            data-aos-delay="100"
+            itemscope
+            itemtype="https://schema.org/Event"
+          >
+            <div
+              class="timeline-icon"
+              role="img"
+              aria-label="Work experience icon"
+            >
+              <i class="fas fa-briefcase" aria-hidden="true"></i>
+            </div>
+            <div class="timeline-content">
+              <header
+                class="timeline-header"
+                role="banner"
+                aria-labelledby="timeline-title-1"
+              >
+                <h3
+                  id="timeline-title-1"
+                  class="timeline-title"
+                  itemprop="name"
+                  aria-level="3"
+                >
+                  Self-Learning Journey to DevOps
+                </h3>
+                <h4
+                  class="timeline-company"
+                  itemprop="organizer"
+                  itemscope
+                  itemtype="https://schema.org/Organization"
+                  aria-label="Organization"
+                >
+                  <span itemprop="name" role="text"
+                    >Self-Practice Projects</span
+                  >
+                </h4>
+                <time
+                  class="timeline-date"
+                  datetime="2022-01-01T00:00:00Z"
+                  itemprop="startDate"
+                  aria-label="Employment period from January 2022 to present"
+                >
+                  <span class="date-start">2022</span>
+                  <span class="date-separator" aria-hidden="true"> - </span>
+                  <span class="date-end" data-current="true">Present</span>
+                </time>
+              </header>
+              <div class="timeline-description" itemprop="description">
+                <p>
+                  Led development of multiple web applications using modern
+                  technologies, frameworks, and best practices. Focused on
+                  creating responsive, accessible, and performant web solutions.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+            <div class="timeline-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <div class="timeline-content">
+              <h3>Freelancing</h3>
+              <h4>Various Clients</h4>
+              <span class="timeline-date">2023 - 2025</span>
+              <p>
+                Developed and maintained web applications using PHP, JavaScript,
+                and MySQL. Collaborated with clients to gather requirements and
+                deliver tailored solutions.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+            <div class="timeline-icon">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <div class="timeline-content">
+              <h3>Diploma in Information Technology</h3>
+              <h4>Zetech University</h4>
+              <span class="timeline-date">2023 - 2025</span>
+              <p>
+                Currently looking for attachment opportunities to gain practical
+                experience in the IT industry. Eager to apply academic knowledge
+                in real-world scenarios.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title">What Clients Say</h2>
+          <br /><br />
+          <p class="section-subtitle">Testimonials from satisfied clients</p>
+        </div>
+
+        <div class="testimonials-slider" id="testimonials-slider">
+          <!-- Testimonials will be loaded dynamically -->
+        </div>
+
+        <div class="slider-controls">
+          <button class="slider-btn prev" id="prev-testimonial">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="slider-btn next" id="next-testimonial">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title">Get In Touch</h2>
+          <br?><br>
+          <p class="section-subtitle">
+            Let's work together on your next project
+          </p>
+        </div>
+
+        <div class="contact-content">
+          <div class="contact-info" data-aos="fade-right">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Email</h3>
+                <a href="mailto:ndindajohn22@gmail.com"><p>ndindajohn22@gmail.com</p></a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Phone</h3>
+                <p>+254 723 396  228</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Location</h3>
+                <p>Nairobi, Kenya</p>
+              </div>
+            </div>
+
+            <div class="social-links" role="list" aria-label="Social media links">
+              <a
+                href="https://wa.me/254798587203?text=Hi%20John,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect!"
+                class="social-link whatsapp-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Contact via WhatsApp"
+                title="Chat on WhatsApp"
+                data-platform="whatsapp"
+              >
+                <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                <span class="sr-only">WhatsApp</span>
+              </a>
+              <a
+                href="https://github.com/Zerocode-sean"
+                class="social-link github-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit GitHub profile"
+                title="View GitHub Profile"
+                data-platform="github"
+              >
+                <i class="fab fa-github" aria-hidden="true"></i>
+                <span class="sr-only">GitHub</span>
+              </a>
+              <a
+                href="https://x.com/_mutua1"
+                class="social-link twitter-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Follow on X (Twitter)"
+                title="Follow on X"
+                data-platform="twitter"
+              >
+                <i class="fab fa-twitter" aria-hidden="true"></i>
+                <span class="sr-only">X (Twitter)</span>
+              </a>
+              <a
+                href="https://www.instagram.com/browshawnmutua/"
+                class="social-link instagram-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Follow on Instagram"
+                title="Follow on Instagram"
+                data-platform="instagram"
+              >
+                <i class="fab fa-instagram" aria-hidden="true"></i>
+                <span class="sr-only">Instagram</span>
+              </a>
+              <a
+                href="https://www.tiktok.com/@tech_hub599"
+                class="social-link tiktok-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Follow on TikTok"
+                title="Follow on TikTok"
+                data-platform="tiktok"
+              >
+                <i class="fab fa-tiktok" aria-hidden="true"></i>
+                <span class="sr-only">TikTok</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-form" data-aos="fade-left">
+            <form
+              id="contact-form"
+              action="backend/contact.php"
+              method="POST"
+              novalidate
+              aria-label="Contact form"
+            >
+              <div class="form-group">
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  required
+                  minlength="2"
+                  maxlength="50"
+                  pattern="[A-Za-z\s]+"
+                  aria-describedby="name-error"
+                  autocomplete="name"
+                />
+                <label for="name">Your Name</label>
+                <div
+                  id="name-error"
+                  class="error-message"
+                  role="alert"
+                  aria-live="polite"
+                ></div>
+              </div>
+
+              <div class="form-group">
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  required
+                  aria-describedby="email-error"
+                  autocomplete="email"
+                />
+                <label for="email">Your Email</label>
+                <div
+                  id="email-error"
+                  class="error-message"
+                  role="alert"
+                  aria-live="polite"
+                ></div>
+              </div>
+
+              <div class="form-group">
+                <input
+                  type="text"
+                  name="subject"
+                  id="subject"
+                  required
+                  minlength="5"
+                  maxlength="100"
+                  aria-describedby="subject-error"
+                  autocomplete="off"
+                />
+                <label for="subject">Subject</label>
+                <div
+                  id="subject-error"
+                  class="error-message"
+                  role="alert"
+                  aria-live="polite"
+                ></div>
+              </div>
+
+              <div class="form-group">
+                <textarea
+                  name="message"
+                  id="message"
+                  rows="5"
+                  required
+                  minlength="10"
+                  maxlength="1000"
+                  aria-describedby="message-error"
+                  autocomplete="off"
+                ></textarea>
+                <label for="message">Your Message</label>
+                <div
+                  id="message-error"
+                  class="error-message"
+                  role="alert"
+                  aria-live="polite"
+                ></div>
+              </div>
+
+              <button type="submit" class="btn btn-primary" id="submit-btn">
+                <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                <span id="submit-text">Send Message</span>
+                <div
+                  id="loading-spinner"
+                  class="spinner"
+                  style="display: none"
+                  aria-hidden="true"
+                ></div>
+              </button>
+
+              <div
+                id="form-status"
+                class="form-status"
+                role="status"
+                aria-live="polite"
+              ></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Portfolio</h3>
+            <p>
+              Thanks for visiting my portfolio. Let's create something amazing
+              together!
+            </p>
+          </div>
+
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h3>Follow Me</h3>
+            <div class="social-links">
+              <a href="https://wa.me/254798587203?text=Hi%20John,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect!"><i class="fab fa-whatsapp"></i></a>
+              <a href="https://github.com/Zerocode-sean"><i class="fab fa-github"></i></a>
+              <a href="https://x.com/_mutua1"><i class="fab fa-twitter"></i></a>
+              <a href="https://www.tiktok.com/@tech_hub599"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2024 Your Name. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Fallback for JavaScript disabled -->
+    <noscript>
+      <style>
+        [data-aos] {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+        .hero-subtitle .typed-text {
+          display: block;
+        }
+        .cursor {
+          display: none;
+        }
+      </style>
+    </noscript>
+
+    <!-- JavaScript Files -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/projects.js" defer></script>
+    <script src="assets/js/contact.js" defer></script>
+
+    <!-- Performance optimization: Preload critical resources -->
+    <link
+      rel="preload"
+      href="assets/images/profile.jpg"
+      as="image"
+      type="image/jpeg"
+    />
+    <link rel="preload" href="assets/css/style.css" as="style" />
+    <link rel="preload" href="assets/css/responsive.css" as="style" />
+
+    <!-- Preconnect to social media domains for better performance -->
+    <link rel="preconnect" href="https://wa.me" crossorigin />
+    <link rel="preconnect" href="https://github.com" crossorigin />
+    <link rel="preconnect" href="https://x.com" crossorigin />
+    <link rel="preconnect" href="https://www.instagram.com" crossorigin />
+    <link rel="preconnect" href="https://www.tiktok.com" crossorigin />
+    <link rel="dns-prefetch" href="//wa.me" />
+    <link rel="dns-prefetch" href="//github.com" />
+    <link rel="dns-prefetch" href="//x.com" />
+    <link rel="dns-prefetch" href="//www.instagram.com" />
+    <link rel="dns-prefetch" href="//www.tiktok.com" />
+  </body>
+</html>
