@@ -341,7 +341,7 @@ If you need help or have questions:
 
 1. Check the [Documentation](docs/)
 2. Open an [Issue](https://github.com/Zerocode-sean/portfolio-website/issues)
-3. Contact: your.email@example.com
+3. Contact: ndindajohn22@gmail.com
 
 ## 🔄 Version History
 
