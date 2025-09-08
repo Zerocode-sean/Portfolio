@@ -340,7 +340,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 If you need help or have questions:
 
 1. Check the [Documentation](docs/)
-2. Open an [Issue](https://github.com/yourusername/portfolio-website/issues)
+2. Open an [Issue](https://github.com/Zerocode-sean/portfolio-website/issues)
 3. Contact: your.email@example.com
 
 ## 🔄 Version History
@@ -368,4 +368,4 @@ If you need help or have questions:
 
 ⭐ **Star this repository if you found it helpful!**
 
-Built with ❤️ by [Your Name](https://yourwebsite.com)
+Built with ❤️ by John Mutua https://john-mutua-portfolio.onrender.com/
