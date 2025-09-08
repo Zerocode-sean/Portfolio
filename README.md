@@ -7,6 +7,7 @@ A modern, responsive personal portfolio website built with HTML, CSS, JavaScript
 ## ✨ Features
 
 ### Frontend
+
 - **Modern Design**: Clean, professional design with appealing color schemes
 - **Fully Responsive**: Works perfectly on all devices and screen sizes
 - **Interactive Animations**: Smooth scrolling, fade-in effects, and micro-interactions
@@ -19,6 +20,7 @@ A modern, responsive personal portfolio website built with HTML, CSS, JavaScript
 - **SEO Optimized**: Meta tags, structured data, and semantic markup
 
 ### Backend
+
 - **PHP Backend**: Clean, object-oriented PHP architecture
 - **MySQL Database**: Comprehensive database schema with relationships
 - **Email System**: SMTP email sending with templates and queue system
@@ -29,6 +31,7 @@ A modern, responsive personal portfolio website built with HTML, CSS, JavaScript
 - **Admin Dashboard**: Manage content, view analytics, and handle contacts
 
 ### Technical Features
+
 - **Progressive Web App**: Offline support and installable
 - **Performance Optimized**: Lazy loading, minified assets, optimized images
 - **Accessibility**: WCAG 2.1 AA compliant, keyboard navigation, screen reader support
@@ -39,6 +42,7 @@ A modern, responsive personal portfolio website built with HTML, CSS, JavaScript
 ## 🛠️ Technology Stack
 
 ### Frontend
+
 - **HTML5**: Semantic markup with modern features
 - **CSS3**: Advanced styling with Flexbox, Grid, and animations
 - **JavaScript (ES6+)**: Modern JavaScript with modules and async/await
@@ -47,6 +51,7 @@ A modern, responsive personal portfolio website built with HTML, CSS, JavaScript
 - **AOS Library**: Animate On Scroll effects
 
 ### Backend
+
 - **PHP 7.4+**: Server-side logic and API endpoints
 - **MySQL 8.0+**: Relational database management
 - **PDO**: Secure database interactions
@@ -54,6 +59,7 @@ A modern, responsive personal portfolio website built with HTML, CSS, JavaScript
 - **JSON APIs**: RESTful API endpoints
 
 ### Tools & Libraries
+
 - **Git**: Version control
 - **Composer**: PHP dependency management (optional)
 - **npm**: JavaScript package management (optional)
@@ -70,12 +76,14 @@ A modern, responsive personal portfolio website built with HTML, CSS, JavaScript
 ## 🚀 Installation
 
 ### 1. Clone the Repository
+
 ```bash
 git clone https://github.com/yourusername/portfolio-website.git
 cd portfolio-website
 ```
 
 ### 2. Database Setup
+
 ```bash
 # Create database and import schema
 mysql -u root -p < database/schema.sql
@@ -85,7 +93,9 @@ mysql -u root -p < database/schema.sql
 ```
 
 ### 3. Configure Database Connection
+
 Edit `backend/config.php` and update database credentials:
+
 ```php
 define('DB_HOST', 'localhost');
 define('DB_USER', 'your_username');
@@ -94,7 +104,9 @@ define('DB_NAME', 'portfolio_db');
 ```
 
 ### 4. Configure Email Settings
+
 Update email configuration in `backend/config.php`:
+
 ```php
 define('SMTP_HOST', 'smtp.gmail.com');
 define('SMTP_USERNAME', 'your-email@gmail.com');
@@ -103,6 +115,7 @@ define('SMTP_PORT', 587);
 ```
 
 ### 5. Set Permissions
+
 ```bash
 # Make upload directory writable
 chmod 755 assets/uploads/
@@ -113,6 +126,7 @@ chmod 644 backend/*.php
 ```
 
 ### 6. Update Content
+
 1. Replace placeholder images in `assets/images/`
 2. Update personal information in `index.html`
 3. Modify project data in `assets/js/projects.js`
@@ -150,17 +164,20 @@ portfolio-website/
 ## 🎨 Customization
 
 ### Colors and Branding
+
 Update CSS custom properties in `assets/css/style.css`:
+
 ```css
 :root {
-    --primary-color: #6366f1;     /* Main brand color */
-    --secondary-color: #06b6d4;   /* Secondary color */
-    --accent-color: #f59e0b;      /* Accent color */
-    /* Add your custom colors */
+  --primary-color: #6366f1; /* Main brand color */
+  --secondary-color: #06b6d4; /* Secondary color */
+  --accent-color: #f59e0b; /* Accent color */
+  /* Add your custom colors */
 }
 ```
 
 ### Content Sections
+
 1. **Hero Section**: Update in `index.html` lines 50-85
 2. **About Section**: Modify in `index.html` lines 90-140
 3. **Skills**: Edit skills data in `assets/js/main.js`
@@ -168,6 +185,7 @@ Update CSS custom properties in `assets/css/style.css`:
 5. **Experience**: Modify timeline in `index.html` lines 250-300
 
 ### Adding New Sections
+
 1. Add HTML structure in `index.html`
 2. Add corresponding CSS in `assets/css/style.css`
 3. Add JavaScript functionality if needed
@@ -176,12 +194,14 @@ Update CSS custom properties in `assets/css/style.css`:
 ## 📧 Contact Form Setup
 
 ### Email Configuration
+
 1. **Gmail SMTP**: Use App Passwords for authentication
 2. **SendGrid**: For high-volume email sending
 3. **Amazon SES**: For AWS-hosted applications
 4. **Mailgun**: Alternative email service
 
 ### Testing Contact Form
+
 ```bash
 # Test with curl
 curl -X POST http://your-domain.com/backend/contact.php \
@@ -204,12 +224,14 @@ curl -X POST http://your-domain.com/backend/contact.php \
 ## 📈 Analytics and SEO
 
 ### Built-in Analytics
+
 - Page views tracking
 - Contact form submissions
 - Project interactions
 - User engagement metrics
 
 ### SEO Features
+
 - Semantic HTML structure
 - Meta tags optimization
 - Open Graph tags
@@ -218,48 +240,57 @@ curl -X POST http://your-domain.com/backend/contact.php \
 - Clean URL structure
 
 ### Google Analytics Integration
+
 Add your tracking code to `index.html`:
+
 ```html
 <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"
+></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'GA_TRACKING_ID');
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "GA_TRACKING_ID");
 </script>
 ```
 
 ## 🚀 Deployment
 
 ### Apache Configuration
+
 ```apache
 <VirtualHost *:80>
     ServerName yourdomain.com
     DocumentRoot /path/to/portfolio-website
-    
+
     <Directory /path/to/portfolio-website>
         AllowOverride All
         Require all granted
     </Directory>
-    
+
     ErrorLog ${APACHE_LOG_DIR}/portfolio_error.log
     CustomLog ${APACHE_LOG_DIR}/portfolio_access.log combined
 </VirtualHost>
 ```
 
 ### Nginx Configuration
+
 ```nginx
 server {
     listen 80;
     server_name yourdomain.com;
     root /path/to/portfolio-website;
     index index.html;
-    
+
     location / {
         try_files $uri $uri/ =404;
     }
-    
+
     location ~ \.php$ {
         fastcgi_pass unix:/var/run/php/php7.4-fpm.sock;
         fastcgi_index index.php;
@@ -270,6 +301,7 @@ server {
 ```
 
 ### SSL Certificate (Let's Encrypt)
+
 ```bash
 # Install Certbot
 sudo apt install certbot python3-certbot-apache
@@ -281,6 +313,7 @@ sudo certbot --apache -d yourdomain.com
 ## 🧪 Testing
 
 ### Manual Testing Checklist
+
 - [ ] Responsive design on all devices
 - [ ] Contact form submission and validation
 - [ ] Email notifications working
@@ -292,7 +325,9 @@ sudo certbot --apache -d yourdomain.com
 - [ ] Cross-browser compatibility
 
 ### Automated Testing
+
 Consider adding:
+
 - **Unit Tests**: PHP unit tests for backend functions
 - **Integration Tests**: Test API endpoints
 - **E2E Tests**: Selenium or Cypress for frontend testing
@@ -301,6 +336,7 @@ Consider adding:
 ## 🔧 Maintenance
 
 ### Regular Tasks
+
 1. **Database Cleanup**: Run cleanup procedures monthly
 2. **Security Updates**: Keep PHP and dependencies updated
 3. **Backup**: Regular database and file backups
@@ -308,6 +344,7 @@ Consider adding:
 5. **Content Updates**: Keep projects and skills current
 
 ### Backup Strategy
+
 ```bash
 # Database backup
 mysqldump -u username -p portfolio_db > backup_$(date +%Y%m%d).sql
@@ -346,6 +383,7 @@ If you need help or have questions:
 ## 🔄 Version History
 
 ### v1.0.0 (Current)
+
 - Initial release
 - Complete portfolio functionality
 - Contact form with backend
@@ -355,6 +393,7 @@ If you need help or have questions:
 - Email notifications
 
 ### Planned Features
+
 - [ ] Admin dashboard
 - [ ] Blog system
 - [ ] Multi-language support
